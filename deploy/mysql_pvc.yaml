@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: bliss-mysql-storage
+spec:
+  storageClassName: local-path    # 名稱要和安裝的storageclass一樣
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 100Mi
