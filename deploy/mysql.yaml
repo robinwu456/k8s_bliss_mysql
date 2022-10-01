@@ -30,7 +30,7 @@ spec:
               name: mysql
           volumeMounts:
             - name: bliss-mysql-storage
-              mountPath: /
+              mountPath: /var/lib/mysql
       volumes:
         - name: bliss-mysql-storage          # 名稱和pvc的名稱一樣
           persistentVolumeClaim:
