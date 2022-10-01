@@ -48,6 +48,7 @@ spec:
                     sh 'mkdir -p ~/.kube && cp ${KUBECONFIG} ~/.kube/config'
 		    sh "sed -i.bak 's#quay.io/robinwu456/bliss_mysql#${IMAGE_TAG}#' deploy/mysql.yaml"
                     sh 'kubectl apply -f deploy/service_mysql.yaml -n bliss-prod'
+                    sh 'kubectl apply -f deploy/mysql_pvc.yaml -n bliss-prod'
                     sh 'kubectl apply -f deploy/mysql.yaml -n bliss-prod'
                 }
             }
