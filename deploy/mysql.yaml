@@ -28,10 +28,10 @@ spec:
           ports:
             - containerPort: 3306 # mysql端口 
               name: mysql
-              #          volumeMounts:
-              #            - name: bliss-mysql-storage
-              #              mountPath: /var/lib/mysql
-              #      volumes:
-              #        - name: bliss-mysql-storage          # 名稱和pvc的名稱一樣
-              #          persistentVolumeClaim:
-              #            claimName: bliss-mysql-storage
+          volumeMounts:
+            - name: bliss-mysql-storage
+              mountPath: /var/lib/mysql
+      volumes:
+        - name: bliss-mysql-storage          # 名稱和pvc的名稱一樣
+          persistentVolumeClaim:
+            claimName: bliss-mysql-pvc
